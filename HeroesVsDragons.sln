@@ -3,6 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroesVsDragons", "HeroesVsDragons\HeroesVsDragons.csproj", "{6755CD4D-FD5A-417A-A84D-FC395A336203}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroesVsDragons.Model.Database", "HeroesVsDragons.Model.Database\HeroesVsDragons.Model.Database.csproj", "{C7504D18-0C72-4AAF-9B36-7ECF45F71ACE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroesVsDragons.Tests", "HeroesVsDragons.Tests\HeroesVsDragons.Tests.csproj", "{F5E266EC-B7E8-4168-B08F-7A653CA4C4AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroesVsDragons.Model", "HeroesVsDragons.Model\HeroesVsDragons.Model.csproj", "{27E9886C-23BD-4984-BD5E-D19129A0570F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BFEDC884-D153-4AF3-853B-B068C573CF5B}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +24,17 @@ Global
 		{6755CD4D-FD5A-417A-A84D-FC395A336203}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6755CD4D-FD5A-417A-A84D-FC395A336203}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6755CD4D-FD5A-417A-A84D-FC395A336203}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7504D18-0C72-4AAF-9B36-7ECF45F71ACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7504D18-0C72-4AAF-9B36-7ECF45F71ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7504D18-0C72-4AAF-9B36-7ECF45F71ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7504D18-0C72-4AAF-9B36-7ECF45F71ACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5E266EC-B7E8-4168-B08F-7A653CA4C4AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5E266EC-B7E8-4168-B08F-7A653CA4C4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5E266EC-B7E8-4168-B08F-7A653CA4C4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5E266EC-B7E8-4168-B08F-7A653CA4C4AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27E9886C-23BD-4984-BD5E-D19129A0570F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27E9886C-23BD-4984-BD5E-D19129A0570F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27E9886C-23BD-4984-BD5E-D19129A0570F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27E9886C-23BD-4984-BD5E-D19129A0570F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
