@@ -11,6 +11,7 @@
     <Folder Include="wwwroot\" />
     <Folder Include="ApiControllers\" />
     <Folder Include="Attributes\" />
+    <Folder Include="wwwroot\swagger-ui\" />
   </ItemGroup>
 
   <ItemGroup>

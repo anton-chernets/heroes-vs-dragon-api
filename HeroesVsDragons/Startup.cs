@@ -65,7 +65,7 @@ namespace HeroesVsDragons
 
             app.UseSwaggerUI(c =>
             {
-                //c.InjectStylesheet("/swagger-ui/custom.css");
+                c.InjectStylesheet("/swagger-ui/custom.css");
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "HeroesVsDragons V1");
             });
 
