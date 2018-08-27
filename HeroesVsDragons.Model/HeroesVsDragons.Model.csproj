@@ -4,4 +4,14 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="API\" />
+    <Folder Include="API\ModelLayer\" />
+    <Folder Include="API\ModelLayer\Unit\" />
+    <Folder Include="API\ModelLayer\Unit\Models\" />
+    <Folder Include="API\ModelLayer\Unit\Requests\" />
+    <Folder Include="API\ModelLayer\Base\" />
+    <Folder Include="API\ModelLayer\Base\Models\" />
+    <Folder Include="API\ModelLayer\Base\Requests\" />
+  </ItemGroup>
 </Project>
