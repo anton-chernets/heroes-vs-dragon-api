@@ -12,19 +12,32 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
+using HeroesVsDragons.Model.API.Services;
+using HeroesVsDragons.Model.Database.Services.API;
 
 namespace HeroesVsDragons
 {
+    /// <summary>
+    /// Some coment.
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Some coment.
+        /// </summary>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /// <summary>
+        /// Get configuration.
+        /// </summary>
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to add services to the container.
+        /// </summary>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -47,9 +60,13 @@ namespace HeroesVsDragons
                 c.IncludeXmlComments(xmlPath);
 #endif
             });
+
+            services.AddScoped<IHeroService, HeroService>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// </summary>
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())

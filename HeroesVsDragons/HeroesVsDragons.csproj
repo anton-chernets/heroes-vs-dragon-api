@@ -12,6 +12,7 @@
     <Folder Include="ApiControllers\" />
     <Folder Include="Attributes\" />
     <Folder Include="wwwroot\swagger-ui\" />
+    <Folder Include="ApiControllers\API\Interfaces\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,4 +21,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="3.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HeroesVsDragons.Model\HeroesVsDragons.Model.csproj" />
+    <ProjectReference Include="..\HeroesVsDragons.Model.Database\HeroesVsDragons.Model.Database.csproj" />
+  </ItemGroup>
 </Project>

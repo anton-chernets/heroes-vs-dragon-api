@@ -10,13 +10,22 @@ using Microsoft.Extensions.Logging;
 
 namespace HeroesVsDragons
 {
+    /// <summary>
+    /// Main class in the programm.
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// Main mhetod in the programm.
+        /// </summary>
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
         }
 
+        /// <summary>
+        /// Web host mhetod in the programm.
+        /// </summary>
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();

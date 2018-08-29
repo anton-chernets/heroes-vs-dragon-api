@@ -13,5 +13,7 @@
     <Folder Include="API\ModelLayer\Base\" />
     <Folder Include="API\ModelLayer\Base\Models\" />
     <Folder Include="API\ModelLayer\Base\Requests\" />
+    <Folder Include="API\Services\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
 </Project>
