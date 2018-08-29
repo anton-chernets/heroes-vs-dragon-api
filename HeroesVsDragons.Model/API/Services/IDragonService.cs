@@ -2,7 +2,7 @@
 
 namespace HeroesVsDragons.Model.API.Services
 {
-    public interface IHeroService
+    public interface IDragonService
     {
         /*some code*/
     }

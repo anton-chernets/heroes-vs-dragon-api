@@ -3,9 +3,9 @@
 namespace HeroesVsDragons.ApiControllers.API.Interfaces
 {
     /// <summary>
-    /// Interface for heroes controller.
+    /// Interface for dragons controller.
     /// </summary>
-    public interface IHeroesController
+    public interface IDragonsController
     {
         /*some code*/
     }

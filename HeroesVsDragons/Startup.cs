@@ -61,7 +61,9 @@ namespace HeroesVsDragons
 #endif
             });
 
-            services.AddScoped<IHeroService, HeroService>();
+            services.AddSingleton<IHeroService, HeroService>();
+            services.AddScoped<IDragonService, DragonService>();
+            //services.AddTransient<IHitService, HitService>();
         }
 
         /// <summary>

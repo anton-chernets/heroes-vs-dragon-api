@@ -8,22 +8,22 @@ using HeroesVsDragons.ApiControllers.API.Interfaces;
 using HeroesVsDragons.Model.API.Services;
 using HeroesVsDragons.Model.Database.Services.API;
 
-namespace HeroesVsDragons.Controllers
+namespace HeroesVsDragons.ApiControllers.API
 {
     /// <summary>
-    /// Controller for hero.
+    /// Controller for dragon.
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class HeroesController : ControllerBase, IHeroesController
+    public class DragonsController : ControllerBase, IDragonsController
     {
         /// <summary>
         /// Some coment.
         /// </summary>
-        private readonly IHeroService _itemService;
+        private readonly IDragonService _itemService;
 
         /// <summary>
-        /// GET api/heroes
+        /// GET api/dragons
         /// </summary>
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
@@ -32,12 +32,21 @@ namespace HeroesVsDragons.Controllers
         }
 
         /// <summary>
-        /// POST api/heroes set hero
+        /// GET api/dragons vs id param
+        /// </summary>
+        [HttpGet("{id}")]
+        public ActionResult<Object> Get(long id)
+        {
+            return DragonService.GetDragonById(id);
+        }
+
+        /// <summary>
+        /// Post api/dragons set dragon
         /// </summary>
         [HttpPost]
-        public object Post([FromBody] string name)
+        public object Post()
         {
-            return HeroService.CreateHero(name);
+            return DragonService.CreateDragon();
         }
     }
 }

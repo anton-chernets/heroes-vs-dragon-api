@@ -8,12 +8,6 @@ namespace HeroesVsDragons.Model.Database.Services.API
     /// </summary>
     public class HeroService : BaseService, IHeroService
     {
-        public static object GetHeroById(long id)
-        {
-            object hero = new HeroUnitModel("Test");
-            return id == 1 ? hero : null;
-        }
-
         public static object CreateHero(string name)
         {
             return new HeroUnitModel(name);

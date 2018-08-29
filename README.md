@@ -50,6 +50,14 @@ https://localhost:5001/swagger/index.html
 6) Add apicontrollers class (vs base)
 7) Add helpers
 8) Add services
+9) Start use DI
+10) Add dragon
+``````
+services.AddScoped<IHeroService, HeroService>();
+........
+
+private readonly IHeroService _itemService;
+``````
 
 Some usage:
 
