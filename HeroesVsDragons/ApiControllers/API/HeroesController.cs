@@ -7,6 +7,7 @@ using HeroesVsDragons.Model.API.ModelLayer.Unit.Models;
 using HeroesVsDragons.ApiControllers.API.Interfaces;
 using HeroesVsDragons.Model.API.Services;
 using HeroesVsDragons.Model.Database.Services.API;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HeroesVsDragons.Controllers
 {

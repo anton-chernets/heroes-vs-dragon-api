@@ -8,6 +8,7 @@
 using System.IO;
 using Swashbuckle.AspNetCore.Swagger;
 ``````
+
 ``````
 public void ConfigureServices(IServiceCollection services)
         {
@@ -31,6 +32,7 @@ public void ConfigureServices(IServiceCollection services)
 #endif
             });
 ``````
+
 ``````public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
         ..............
@@ -44,20 +46,28 @@ public void ConfigureServices(IServiceCollection services)
 ``````
 
 https://localhost:5001/swagger/index.html
+
 3) Add referense одного проекта на друго на проекте - на зависимостях - добавить ссылку
 4) Add interfeces
 5) Add model class (vs base)
 6) Add apicontrollers class (vs base)
 7) Add helpers
 8) Add services
-9) Start use DI
-10) Add dragon
+
 ``````
 services.AddScoped<IHeroService, HeroService>();
 ........
 
 private readonly IHeroService _itemService;
 ``````
+
+9) Start use DI
+10) Add dragon
+11) Clear default controller values and change default route Properties -> launchSettings
+12) Add token controller
+13) Add class AuthOptions settings
+14) Change startup.cs for JWT
+
 
 Some usage:
 

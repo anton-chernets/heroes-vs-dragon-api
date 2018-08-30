@@ -7,6 +7,7 @@ using HeroesVsDragons.Model.API.ModelLayer.Unit.Models;
 using HeroesVsDragons.ApiControllers.API.Interfaces;
 using HeroesVsDragons.Model.API.Services;
 using HeroesVsDragons.Model.Database.Services.API;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HeroesVsDragons.ApiControllers.API
 {
@@ -43,6 +44,7 @@ namespace HeroesVsDragons.ApiControllers.API
         /// <summary>
         /// Post api/dragons set dragon
         /// </summary>
+        [Authorize]
         [HttpPost]
         public object Post()
         {
