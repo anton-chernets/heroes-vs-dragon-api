@@ -67,6 +67,7 @@ private readonly IHeroService _itemService;
 12) Add token controller
 13) Add class AuthOptions settings
 14) Change startup.cs for JWT
+15) API gener token
 
 
 Some usage:

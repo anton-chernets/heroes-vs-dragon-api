@@ -15,6 +15,8 @@
     <Folder Include="API\ModelLayer\Base\Requests\" />
     <Folder Include="API\Services\" />
     <Folder Include="Helpers\" />
+    <Folder Include="API\ModelLayer\Auth\" />
+    <Folder Include="API\ModelLayer\Auth\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="API\Services\DragonService.cs" />

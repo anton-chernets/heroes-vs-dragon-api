@@ -8,29 +8,28 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using Newtonsoft.Json;
 using System.Security.Claims;
+using HeroesVsDragons.Model.API.ModelLayer.Auth.Models;
 using HeroesVsDragons.Model.API.ModelLayer.Unit.Models;
+using HeroesVsDragons.Model.Database.Services.API;
 
 namespace HeroesVsDragons.ApiControllers.API
 {
-    public class TokenResponse
-    {
-        public string Token { get; set; }
-        public string Username { get; set; }
-    }
     /// <summary>
     /// Controller for JWT.
     /// </summary>
-    public class AccountController : Controller
+    public class AuthController : Controller
     {
-        [HttpPost("/token")]
-        public async Task<TokenResponse> TokenAsync([FromBody]string username)
+        [HttpPost("api/token")]
+        public async Task<TokenResponseModel> TokenAsync([FromBody]string name)
         {
-            TokenResponse result = new TokenResponse();
+            TokenResponseModel result = new TokenResponseModel();
 
-            ClaimsIdentity identity = GetIdentity(username);
+            ClaimsIdentity identity = GetIdentity(name);
+
             if (identity != null)
             {
                 var now = DateTime.UtcNow;
+
                 // создаем JWT-токен
                 var jwt = new JwtSecurityToken(
                         issuer: AuthOptions.ISSUER,
@@ -42,31 +41,21 @@ namespace HeroesVsDragons.ApiControllers.API
                 var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
 
                 result.Token = encodedJwt;
-                result.Username = username;
-
-                //var response = new
-                //{
-                //    access_token = encodedJwt,
-                //    username = identity.Name
-                //};
+                result.Name = name;
             }
-            else
-            {
-                
-            }
-
-           
-
-            // сериализация ответа
-            //Response.ContentType = "application/json";
-            //await Response.WriteAsync(JsonConvert.SerializeObject(response, new JsonSerializerSettings { Formatting = Formatting.Indented }));
 
             return result;
         }
 
-        private ClaimsIdentity GetIdentity(string username)
+        private ClaimsIdentity GetIdentity(string name)
         {
-            return null;// если пользователя не найдено
+            HeroUnitModel hero = new HeroUnitModel(name);
+
+            var claims = new List<Claim> { };
+            ClaimsIdentity claimsIdentity =
+                new ClaimsIdentity(claims, "Token", ClaimsIdentity.DefaultNameClaimType,
+                ClaimsIdentity.DefaultRoleClaimType);
+            return claimsIdentity;
         }
     }
 }
