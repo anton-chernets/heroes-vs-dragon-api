@@ -25,4 +25,7 @@
     <ProjectReference Include="..\HeroesVsDragons.Model\HeroesVsDragons.Model.csproj" />
     <ProjectReference Include="..\HeroesVsDragons.Model.Database\HeroesVsDragons.Model.Database.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ApiControllers\API\TokenController.cs" />
+  </ItemGroup>
 </Project>

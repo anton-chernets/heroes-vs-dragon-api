@@ -9,7 +9,7 @@ namespace HeroesVsDragons.Model.API.ModelLayer.Unit.Models
 
         public DragonUnitModel()
         {
-            this.Name = NameHelper.GenerateName(RandomHelper.GetRandomNumber(5, 16));
+            this.Name = NameHelper.GenerateName(RandomHelper.GetRandomNumber(4, 20));
             this.Created_at = DateHelper.DateTimeToUnixTimestamp(DateTime.Now);
             this.Lives = RandomHelper.GetRandomNumber(80, 100);
         }

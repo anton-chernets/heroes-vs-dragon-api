@@ -67,13 +67,14 @@ private readonly IHeroService _itemService;
 12) Add token controller
 13) Add class AuthOptions settings
 14) Change startup.cs for JWT
-15) API gener token
+15) API gener token and add for requests
+16) Start hit
 
 
 Some usage:
 
 * Swagger
 
-* Entity Framework Core
+* JSON Web Token (JWT)
 
-* JSON Web Token (JWT) 
+* Entity Framework Core 

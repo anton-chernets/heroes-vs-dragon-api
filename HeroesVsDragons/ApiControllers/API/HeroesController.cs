@@ -8,6 +8,7 @@ using HeroesVsDragons.ApiControllers.API.Interfaces;
 using HeroesVsDragons.Model.API.Services;
 using HeroesVsDragons.Model.Database.Services.API;
 using Microsoft.AspNetCore.Authorization;
+using HeroesVsDragons.Model.Shared;
 
 namespace HeroesVsDragons.Controllers
 {
@@ -21,15 +22,29 @@ namespace HeroesVsDragons.Controllers
         /// <summary>
         /// Some coment.
         /// </summary>
-        private readonly IHeroService _itemService;
+        private readonly IHeroService _heroService;
+        /// <summary>
+        /// Some coment.
+        /// </summary>
+        private readonly ITokenService _tokenService;
+
+        /// <summary>
+        /// Some coment.
+        /// </summary>
+        public HeroesController(IHeroService heroService, ITokenService tokenService)
+        {
+            _heroService = heroService;
+            _tokenService = tokenService;
+        }
 
         /// <summary>
         /// GET api/heroes
         /// </summary>
+        [Authorize]
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IList<HeroUnitModel>> Get()
         {
-            return new string[] { "item1", "item2" };
+            return _heroService.GetHeroesList();
         }
 
         /// <summary>
@@ -38,7 +53,15 @@ namespace HeroesVsDragons.Controllers
         [HttpPost]
         public object Post([FromBody] string name)
         {
-            return HeroService.CreateHero(name);
+            try
+            {
+                HeroUnitModel hero = _heroService.CreateHero(name);
+                return _tokenService.CreateTokenAsync(hero.Name);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message + " hero not created");
+            }
         }
     }
 }

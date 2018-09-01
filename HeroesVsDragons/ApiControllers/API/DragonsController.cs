@@ -21,24 +21,34 @@ namespace HeroesVsDragons.ApiControllers.API
         /// <summary>
         /// Some coment.
         /// </summary>
-        private readonly IDragonService _itemService;
+        private readonly IDragonService _dragonService;
+
+        /// <summary>
+        /// Some coment.
+        /// </summary>
+        public DragonsController(IDragonService dragonService)
+        {
+            _dragonService = dragonService;
+        }
 
         /// <summary>
         /// GET api/dragons
         /// </summary>
+        [Authorize]
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IList<DragonUnitModel>> Get()
         {
-            return new string[] { "item1", "item2" };
+            return _dragonService.GetDragonsList();
         }
 
         /// <summary>
         /// GET api/dragons vs id param
         /// </summary>
+        [Authorize]
         [HttpGet("{id}")]
         public ActionResult<Object> Get(long id)
         {
-            return DragonService.GetDragonById(id);
+            return _dragonService.GetDragonById(id);
         }
 
         /// <summary>
@@ -48,7 +58,7 @@ namespace HeroesVsDragons.ApiControllers.API
         [HttpPost]
         public object Post()
         {
-            return DragonService.CreateDragon();
+            return _dragonService.CreateDragon();
         }
     }
 }

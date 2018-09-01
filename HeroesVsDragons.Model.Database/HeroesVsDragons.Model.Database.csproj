@@ -7,8 +7,19 @@
   <ItemGroup>
     <Folder Include="Services\API\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Services\Shared\" />
+    <Folder Include="Options\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HeroesVsDragons.Model\HeroesVsDragons.Model.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Services\API\TokenServiceAsync.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.4" />
   </ItemGroup>
 </Project>

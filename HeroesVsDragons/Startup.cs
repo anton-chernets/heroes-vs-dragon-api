@@ -13,9 +13,12 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 using HeroesVsDragons.Model.API.Services;
+using HeroesVsDragons.Model.Shared;
 using HeroesVsDragons.Model.Database.Services.API;
+using HeroesVsDragons.Model.Database.Services.Shared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using HeroesVsDragons.Model.Database.Options;
 
 namespace HeroesVsDragons
 {
@@ -88,8 +91,9 @@ namespace HeroesVsDragons
 #endif
             });
 
-            services.AddSingleton<IHeroService, HeroService>();
-            services.AddScoped<IDragonService, DragonService>();
+            services.AddTransient<ITokenService, TokenService>();
+            services.AddTransient<IHeroService, HeroService>();
+            services.AddTransient<IDragonService, DragonService>();
             //services.AddTransient<IHitService, HitService>();
         }
 

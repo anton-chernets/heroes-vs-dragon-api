@@ -17,8 +17,12 @@
     <Folder Include="Helpers\" />
     <Folder Include="API\ModelLayer\Auth\" />
     <Folder Include="API\ModelLayer\Auth\Models\" />
+    <Folder Include="Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="API\Services\DragonService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using HeroesVsDragons.Model.API.ModelLayer.Unit.Models;
 using HeroesVsDragons.Model.API.Services;
+using HeroesVsDragons.Model.Helpers;
 
 namespace HeroesVsDragons.Model.Database.Services.API
 {
@@ -9,15 +12,29 @@ namespace HeroesVsDragons.Model.Database.Services.API
     /// </summary>
     public class DragonService : BaseService, IDragonService
     {
-        public static object GetDragonById(long id)
+        private readonly List<DragonUnitModel> _dragons = new List<DragonUnitModel>
         {
-            object dragon = new DragonUnitModel();
-            return id == 1 ? dragon : null;
+            new DragonUnitModel { Id= 1, Name="somename", Created_at= DateHelper.DateTimeToUnixTimestamp(DateTime.Now), Lives = 99 },
+            new DragonUnitModel { Id= 2, Name="somename2", Created_at= DateHelper.DateTimeToUnixTimestamp(DateTime.Now), Lives = 98 },
+            new DragonUnitModel { Id= 3, Name="somename3", Created_at= DateHelper.DateTimeToUnixTimestamp(DateTime.Now), Lives = 100 },
+        };
+
+        public List<DragonUnitModel> GetDragonsList(string filter = null)
+        {
+            return _dragons;
         }
 
-        public static object CreateDragon()
+        public DragonUnitModel GetDragonById(long id)
         {
-            return new DragonUnitModel();
+            return _dragons.FirstOrDefault(x => x.Id == id);
+        }
+
+        public DragonUnitModel CreateDragon()
+        {
+            var dragon = new DragonUnitModel();
+
+            _dragons.Add(dragon);
+            return dragon;
         }
     }
 }
