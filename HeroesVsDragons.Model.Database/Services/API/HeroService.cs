@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using HeroesVsDragons.Model.API.ModelLayer.Unit.Models;
+using HeroesVsDragons.Model.API.ModelLayer.Unit.Requests;
 using HeroesVsDragons.Model.API.Services;
 using HeroesVsDragons.Model.Database.HeadLog;
 using HeroesVsDragons.Model.Helpers;
@@ -33,13 +34,13 @@ namespace HeroesVsDragons.Model.Database.Services.API
             return _heroes;
         }
 
-        public HeroUnitModel CreateHero(string name)
+        public AOResult<HeroUnitModel> CreateHero(CreateHeroRequest createHeroRequest)
+        => BaseInvoke<HeroUnitModel>((aoResult) =>
         {
-            //return Ba
-            var hero = new HeroUnitModel(name);
+            var hero = new HeroUnitModel(createHeroRequest.Name);
 
             _heroes.Add(hero);
-            return hero;
-        }
+            aoResult.SetSuccess(hero);
+        }, createHeroRequest);
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using HeroesVsDragons.Model.API.ModelLayer.Auth.Models;
 using HeroesVsDragons.Model.API.ModelLayer.Unit.Models;
+using HeroesVsDragons.Model.API.ModelLayer.Unit.Requests;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HeroesVsDragons.ApiControllers.API.Interfaces
@@ -11,6 +13,6 @@ namespace HeroesVsDragons.ApiControllers.API.Interfaces
     public interface IHeroesController
     {
         ActionResult<IList<HeroUnitModel>> Get();
-        object Post([FromBody] string name);
+        TokenResponseModel Post([FromBody] CreateHeroRequest createHeroRequest);
     }
 }

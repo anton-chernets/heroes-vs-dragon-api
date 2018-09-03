@@ -71,11 +71,19 @@ private readonly IHeroService _itemService;
 16) Start hit
 17) Надстройка BaseInvoke (базовая обертка реализует набор правил валидаци) возвращаемый общий AOResult, Serilog (файл json в дальнейшем для логов по Kibana), IHeadLog как часть с логами, регистрация всего добра в startup
 18) API работает теперь надо заюзать BaseInvoke и AOResult в моделях для проверок на длинну символов и т.д.
+19) Валидация принимаемых значений пройдена. Создан CreateHeroRequest с проверкой на поле name и вызван в сервисе HeroService "}, createHeroRequest);" + все цифры вынес в константы проекта моделей
+20) вопрос в моделях проверки и при записи в базу тоже нужны или только в реквесте?
+
+!на контроллеры интерфейсы не обязательны
 
 Some usage:
 
-* Swagger
+* Swagger (api doc)
 
 * JSON Web Token (JWT)
 
-* Entity Framework Core 
+* Entity Framework Core (бд)
+
+* Annotations (валидация)
+
+* Serilog (запись логов в файл json)

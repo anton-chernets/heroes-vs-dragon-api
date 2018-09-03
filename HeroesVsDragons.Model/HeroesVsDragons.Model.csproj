@@ -18,6 +18,7 @@
     <Folder Include="API\ModelLayer\Auth\" />
     <Folder Include="API\ModelLayer\Auth\Models\" />
     <Folder Include="Shared\" />
+    <Folder Include="Constants\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="API\Services\DragonService.cs" />

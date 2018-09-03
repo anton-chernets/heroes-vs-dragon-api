@@ -9,6 +9,9 @@ using HeroesVsDragons.Model.API.Services;
 using HeroesVsDragons.Model.Database.Services.API;
 using Microsoft.AspNetCore.Authorization;
 using HeroesVsDragons.Model.Shared;
+using HeroesVsDragons.Model;
+using HeroesVsDragons.Model.API.ModelLayer.Auth.Models;
+using HeroesVsDragons.Model.API.ModelLayer.Unit.Requests;
 
 namespace HeroesVsDragons.Controllers
 {
@@ -51,17 +54,24 @@ namespace HeroesVsDragons.Controllers
         /// POST api/heroes set hero
         /// </summary>
         [HttpPost]
-        public object Post([FromBody] string name)
+        public TokenResponseModel Post([FromBody] CreateHeroRequest createHeroRequest)
         {
+            TokenResponseModel token = null;
+
             try
             {
-                HeroUnitModel hero = _heroService.CreateHero(name);
-                return _tokenService.CreateTokenAsync(hero.Name);
+                AOResult<HeroUnitModel> heroResult = _heroService.CreateHero(createHeroRequest);
+                if (heroResult.IsSuccess)
+                {
+                    token = _tokenService.CreateTokenAsync(heroResult.Result.Name);
+                }
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message + " hero not created");
             }
+
+            return token;
         }
     }
 }
