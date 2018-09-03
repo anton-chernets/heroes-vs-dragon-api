@@ -69,7 +69,8 @@ private readonly IHeroService _itemService;
 14) Change startup.cs for JWT
 15) API gener token and add for requests
 16) Start hit
-
+17) Надстройка BaseInvoke (базовая обертка реализует набор правил валидаци) возвращаемый общий AOResult, Serilog (файл json в дальнейшем для логов по Kibana), IHeadLog как часть с логами, регистрация всего добра в startup
+18) API работает теперь надо заюзать BaseInvoke и AOResult в моделях для проверок на длинну символов и т.д.
 
 Some usage:
 

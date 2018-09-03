@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HeroesVsDragons.Model.API.ModelLayer.Unit.Models;
 using HeroesVsDragons.Model.API.Services;
+using HeroesVsDragons.Model.Database.HeadLog;
 using HeroesVsDragons.Model.Helpers;
 
 namespace HeroesVsDragons.Model.Database.Services.API
@@ -19,6 +20,14 @@ namespace HeroesVsDragons.Model.Database.Services.API
             new HeroUnitModel("heroName2") { Id= 3, Created_at= DateHelper.DateTimeToUnixTimestamp(DateTime.Now), Weapon = 6 },
         };
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:HeroesVsDragons.Model.Database.Services.API.HeroService"/> class.
+        /// </summary>
+        /// <param name="headLog">Head log.</param>
+        public HeroService(IHeadLog headLog) : base(headLog)
+        {
+        }
+
         public List<HeroUnitModel> GetHeroesList(string filter = null)
         {
             return _heroes;
@@ -26,7 +35,7 @@ namespace HeroesVsDragons.Model.Database.Services.API
 
         public HeroUnitModel CreateHero(string name)
         {
-
+            //return Ba
             var hero = new HeroUnitModel(name);
 
             _heroes.Add(hero);

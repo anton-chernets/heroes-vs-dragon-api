@@ -19,6 +19,9 @@ using HeroesVsDragons.Model.Database.Services.Shared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using HeroesVsDragons.Model.Database.Options;
+using HeroesVsDragons.Model.Database.HeadLog;
+using HeroesVsDragons.Model.Database.HeadLog.Elasticsearch;
+using Serilog;
 
 namespace HeroesVsDragons
 {
@@ -91,6 +94,12 @@ namespace HeroesVsDragons
 #endif
             });
 
+            //register logger
+            services.AddSingleton<Serilog.ILogger>(
+                                                   new LoggerConfiguration()
+                                                       .ReadFrom.Configuration(Configuration)
+                                                       .CreateLogger());
+            services.AddSingleton<IHeadLog, ElasticsearchHeadLog>();
             services.AddTransient<ITokenService, TokenService>();
             services.AddTransient<IHeroService, HeroService>();
             services.AddTransient<IDragonService, DragonService>();
