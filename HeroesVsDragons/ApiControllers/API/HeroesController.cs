@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HeroesVsDragons.Model.API.ModelLayer.Unit.Models;
-using HeroesVsDragons.ApiControllers.API.Interfaces;
 using HeroesVsDragons.Model.API.Services;
 using HeroesVsDragons.Model.Database.Services.API;
 using Microsoft.AspNetCore.Authorization;
@@ -20,7 +19,7 @@ namespace HeroesVsDragons.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class HeroesController : ControllerBase, IHeroesController
+    public class HeroesController : ControllerBase
     {
         /// <summary>
         /// Some coment.

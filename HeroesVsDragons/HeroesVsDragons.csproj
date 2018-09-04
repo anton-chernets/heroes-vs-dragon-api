@@ -12,7 +12,6 @@
     <Folder Include="ApiControllers\" />
     <Folder Include="Attributes\" />
     <Folder Include="wwwroot\swagger-ui\" />
-    <Folder Include="ApiControllers\API\Interfaces\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,5 +27,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="ApiControllers\API\TokenController.cs" />
+    <Compile Remove="ApiControllers\API\Interfaces\IDragonsController.cs" />
   </ItemGroup>
 </Project>
