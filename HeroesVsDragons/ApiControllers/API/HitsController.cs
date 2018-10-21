@@ -1,9 +1,9 @@
 ﻿using System;
 namespace HeroesVsDragons.ApiControllers.API
 {
-    public class HintsController
+    public class HitsController
     {
-        public HintsController()
+        public HitsController()
         {
         }
     }
